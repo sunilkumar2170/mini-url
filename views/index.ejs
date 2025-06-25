@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>URL Shortener</title>
+</head>
+<body>
+  <h1>Mini URL Shortener</h1>
+  <form action="/shorten" method="POST">
+    <input type="text" name="longUrl" placeholder="Enter long URL" required>
+    <button type="submit">Shorten</button>
+  </form>
+
+  <h2>Shortened URLs:</h2>
+  <ul>
+    <% for (let code in urls) { %>
+      <li>
+        <a href="/<%= code %>">http://localhost:3000/<%= code %></a> →
+        <%= urls[code] %>
+      </li>
+    <% } %>
+  </ul>
+</body>
+</html>
